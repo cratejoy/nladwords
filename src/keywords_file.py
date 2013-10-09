@@ -18,8 +18,8 @@ def main(in_file, out_file):
 
     f = open(out_file, "w")
 
-    #for word in common:
-        #f.write(word + "\n")
+    for word in common:
+        f.write(word + "\n")
 
     for words in bigrams:
         f.write(" ".join(words) + "\n")
