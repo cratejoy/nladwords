@@ -186,8 +186,8 @@ def trigrams(words, max_trigrams=100):
 
 
 def common_words(words, max_words=100):
-    words = set([lmtzr.lemmatize(w) for w in words])
+    scrubbed_words = [lmtzr.lemmatize(w) for w in words]
 
-    word_frequencies = FreqDist([w for w in words if w not in sw and w not in sw2])
+    word_frequencies = FreqDist([w for w in scrubbed_words if w not in sw and w not in sw2])
     for word, cnt in word_frequencies.items()[:max_words]:
         yield word
